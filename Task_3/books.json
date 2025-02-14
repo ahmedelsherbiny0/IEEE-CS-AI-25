@@ -4,5 +4,53 @@
         "title": "Fundamentals of ML",
         "author": "Aurelien Geron",
         "publicationYear": 2017
+    },
+    {
+        "id": 567,
+        "title": "Deep Learning with Python",
+        "author": "François Chollet",
+        "publicationYear": 2018
+    },
+    {
+        "id": 789,
+        "title": "Clean Code",
+        "author": "Robert C. Martin",
+        "publicationYear": 2008
+    },
+    {
+        "id": 101,
+        "title": "Design Patterns",
+        "author": "Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides",
+        "publicationYear": 1994
+    },
+    {
+        "id": 202,
+        "title": "You Don't Know JS",
+        "author": "Kyle Simpson",
+        "publicationYear": 2015
+    },
+    {
+        "id": 303,
+        "title": "The Pragmatic Programmer",
+        "author": "Andrew Hunt, David Thomas",
+        "publicationYear": 1999
+    },
+    {
+        "id": 404,
+        "title": "Artificial Intelligence: A Modern Approach",
+        "author": "Stuart Russell, Peter Norvig",
+        "publicationYear": 2020
+    },
+    {
+        "id": 505,
+        "title": "JavaScript: The Good Parts",
+        "author": "Douglas Crockford",
+        "publicationYear": 2008
+    },
+    {
+        "id": 606,
+        "title": "Python Crash Course",
+        "author": "Eric Matthes",
+        "publicationYear": 2019
     }
 ]
