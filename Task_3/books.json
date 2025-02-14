@@ -8,7 +8,7 @@
     {
         "id": 567,
         "title": "Deep Learning with Python",
-        "author": "François Chollet",
+        "author": "Fran\u00c3\u00a7ois Chollet",
         "publicationYear": 2018
     },
     {
@@ -46,11 +46,5 @@
         "title": "JavaScript: The Good Parts",
         "author": "Douglas Crockford",
         "publicationYear": 2008
-    },
-    {
-        "id": 606,
-        "title": "Python Crash Course",
-        "author": "Eric Matthes",
-        "publicationYear": 2019
     }
 ]
