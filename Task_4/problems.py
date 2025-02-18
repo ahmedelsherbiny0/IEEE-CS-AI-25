@@ -40,7 +40,7 @@ def find_mean(numbers):
         sum += number
     return sum / length
        
-def find_mod(numbers):
+def find_mode(numbers):
     freq = {}
     for number in numbers:
         if not number in freq:
@@ -75,7 +75,7 @@ def find_STD(numbers):
 def find_Quartiles(numbers):
     Q2 = find_median(numbers)
     sortedNumbers = sort_numbers(numbers)
-    
+
     if length % 2 == 1:
         lower_half = sortedNumbers[:length // 2]
         upper_half = sortedNumbers[length // 2 + 1:]
@@ -98,7 +98,7 @@ while True:
     print(f"Min: {find_min(numbers)}")
     print(f"Max: {find_max(numbers)}")
     print(f"Mean: {find_mean(numbers): .2f}")
-    print(f"Mod: {find_mod(numbers)}")
+    print(f"Mode: {find_mode(numbers)}")
     print(f"Median: {find_median(numbers)}")
     print(f"Range: {find_range(numbers)}")
     print(f"Variance: {find_variance(numbers): .2f}")
