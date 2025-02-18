@@ -2,9 +2,15 @@ import math
 
 def get_numbers():
     global numbers
-    numbers = list(map(int, input("Enter numbers separated by spaces: ").split()))
-    global length 
-    length = int(len(numbers))
+    while True:
+        try:
+            numbers = list(map(int, input("Enter numbers separated by spaces: ").split()))
+            break
+        except ValueError:
+            print("Invalid input. Please enter only numbers separated by spaces.")
+    
+    global length
+    length = len(numbers)
     
 def sort_numbers(list):
     length = len(list)
@@ -77,7 +83,6 @@ def find_Quartiles(numbers):
     else:
         Q2 = (numbers[int(length // 2)] + numbers[int(length // 2) - 1]) // 2
         if length % 4 == 0:
-            print(length)
             Q1 = (numbers[int(length // 4)] + numbers[int(length // 4) - 1]) // 2
             Q3 = (numbers[int(length // 2) + int(length // 4)] + numbers[int(length // 2) + int(length // 4) + 1]) // 2
         else:
@@ -89,17 +94,21 @@ def find_IQR(numbers):
     quartiles = find_Quartiles(numbers)
     return quartiles[2] - quartiles[0]
     
+while True:
+    get_numbers()
+    # print(numbers)
+    # print(sort_numbers(numbers))
+    print(f"Min: {find_min(numbers)}")
+    print(f"Max: {find_max(numbers)}")
+    print(f"Mean: {find_mean(numbers): .2f}")
+    print(f"Mod: {find_mod(numbers)}")
+    print(f"Median: {find_median(numbers)}")
+    print(f"Range: {find_range(numbers)}")
+    print(f"Variance: {find_variance(numbers): .2f}")
+    print(f"Standard Deviation: {find_STD(numbers): .2f}")
+    print(f"Quartiles: {find_Quartiles(numbers)}")
+    print(f"Interquartile Range (IQR): {find_IQR(numbers)}")
     
-get_numbers()
-print(numbers)
-print(sort_numbers(numbers))
-print(f"Min: {find_min(numbers)}")
-print(f"Max: {find_max(numbers)}")
-print(f"Mean: {find_mean(numbers): .2f}")
-print(f"Mod: {find_mod(numbers)}")
-print(f"Median: {find_median(numbers)}")
-print(f"Range: {find_range(numbers)}")
-print(f"Variance: {find_variance(numbers): .2f}")
-print(f"Standard Deviation: {find_STD(numbers): .2f}")
-print(f"Quartiles: {find_Quartiles(numbers)}")
-print(f"Interquartile Range (IQR): {find_IQR(numbers)}")
+    out = input("Press Q to quit or any key to continue: ")
+    if out.upper() == 'Q':
+        break
