@@ -40,7 +40,7 @@ def find_mean(numbers):
         sum += number
     return sum / length
        
-def find_mod(numbers):
+def find_mode(numbers):
     freq = {}
     for number in numbers:
         if not number in freq:
@@ -51,10 +51,11 @@ def find_mod(numbers):
 
 def find_median(numbers):
     sortedNumbers = sort_numbers(numbers)
-    if length % 2 == 1:
-        return sortedNumbers[int(length / 2)]
+    n = len(sortedNumbers)
+    if n % 2 == 1:
+        return sortedNumbers[n // 2]
     else:
-        return (sortedNumbers[int(length / 2)] + sortedNumbers[int(length / 2 - 1)]) / 2
+        return (sortedNumbers[n // 2] + sortedNumbers[n // 2 - 1]) / 2
         
 def find_range(numbers):
     sortedNumbers = sort_numbers(numbers)
@@ -72,22 +73,18 @@ def find_STD(numbers):
     return math.sqrt(variance)
 
 def find_Quartiles(numbers):
+    Q2 = find_median(numbers)
+    sortedNumbers = sort_numbers(numbers)
+
     if length % 2 == 1:
-        Q2 = numbers[int(length // 2)]
-        if ((length - int(length // 2) - 1) % 2) == 1:
-            Q1 = numbers[int(length // 4)]
-            Q3 = numbers[int(length // 2) + int(length // 4) + 1]
-        else:
-            Q1 = (numbers[int(length // 4)] + numbers[int(length // 4) - 1]) // 2
-            Q3 = (numbers[int(length // 4) + int(length // 2) + 1] + numbers[int(length // 4) + int(length // 2) + 2]) // 2
+        lower_half = sortedNumbers[:length // 2]
+        upper_half = sortedNumbers[length // 2 + 1:]
     else:
-        Q2 = (numbers[int(length // 2)] + numbers[int(length // 2) - 1]) // 2
-        if length % 4 == 0:
-            Q1 = (numbers[int(length // 4)] + numbers[int(length // 4) - 1]) // 2
-            Q3 = (numbers[int(length // 2) + int(length // 4)] + numbers[int(length // 2) + int(length // 4) + 1]) // 2
-        else:
-            Q1 = numbers[int(length // 4)]
-            Q3 = numbers[int(length // 2) + int(length // 4)]
+        lower_half = sortedNumbers[:length // 2]
+        upper_half = sortedNumbers[length // 2:]
+
+    Q1 = find_median(lower_half)
+    Q3 = find_median(upper_half)
     return (Q1, Q2, Q3)
 
 def find_IQR(numbers):
@@ -101,7 +98,7 @@ while True:
     print(f"Min: {find_min(numbers)}")
     print(f"Max: {find_max(numbers)}")
     print(f"Mean: {find_mean(numbers): .2f}")
-    print(f"Mod: {find_mod(numbers)}")
+    print(f"Mode: {find_mode(numbers)}")
     print(f"Median: {find_median(numbers)}")
     print(f"Range: {find_range(numbers)}")
     print(f"Variance: {find_variance(numbers): .2f}")
